@@ -1,0 +1,16 @@
+# Raw data too large for GitHub (125MB)
+DATA/Human_Glioblastoma_Whole_10xvisium.h5ad
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Mac
+.DS_Store
