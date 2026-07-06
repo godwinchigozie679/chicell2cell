@@ -1,3 +1,5 @@
+![Graphical Abstract](graphical-abstract-cell-cell.png)
+
 # Chicell2cell
 
 A Graph Attention Network Variational Autoencoder (GAT-VAE) framework for spatially-aware cell-cell communication inference from spatial transcriptomics data, applied to human glioblastoma (GBM).
