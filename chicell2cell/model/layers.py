@@ -1,4 +1,4 @@
-"""Neural network layers — exact match to your working notebook."""
+"""Neural network layers"""
 
 import torch
 import torch.nn as nn
@@ -16,7 +16,6 @@ class ExpRec(nn.Module):
         nn.init.zeros_(self.reconstruction_layer.bias)
 
     def forward(self, z):
-        z = self.dropout_layer(z)
         z = self.dropout_layer(z)
         return self.reconstruction_layer(z)
 
