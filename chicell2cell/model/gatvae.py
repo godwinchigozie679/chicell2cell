@@ -24,8 +24,10 @@ class CELL2CELLGATVAE(nn.Module):
         self.cell_decoder = Decoder(latent_dim, FLAGS.dropout)
         self.gene_decoder = Decoder(latent_dim, FLAGS.dropout)
         # Expression reconstruction heads
-        self.exp_rec_cell = ExpRec(n_genes,  latent_dim, FLAGS.dropout)
-        self.exp_rec_gene = ExpRec(n_cells, latent_dim, FLAGS.dropout)
+        # cell encoder → reconstructs gene expression
+        self.exp_rec_cell_from_cell = ExpRec(n_genes, latent_dim, FLAGS.dropout)
+        # gene encoder → projects to cell space (cross-reconstruction)
+        self.exp_rec_cell_from_gene = ExpRec(n_cells, latent_dim, FLAGS.dropout)
 
     def forward(self, cell_features, cell_edge_index,
                 gene_features, gene_edge_index):
